@@ -1,0 +1,38 @@
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header {
+    background-color: #0d6efd;
+    color: white;
+    padding: 1rem 0;
+}
+
+header img {
+    height: 10px;
+    margin-right: 10px;
+}
+
+.section-bienvenida {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #7209b7;
+    /*background: linear-gradient(to bottom, #3a0ca3, #7209b7, #f72585);*/
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+

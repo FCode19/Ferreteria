@@ -1,0 +1,101 @@
+<%@ page pageEncoding="UTF-8" %>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="${pageContext.request.contextPath}/index.jsp">
+                    <img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="Logo" style="height: 80px; width: auto;" class="me-2">
+                    <!--Ferretería Mi Perú-->
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContenido">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/index.jsp">
+                                <i class="fas fa-home me-1"></i>Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">
+                                <i class="fas fa-cash-register me-1"></i>Ventas</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-users me-1"></i>Clientes</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Base de Datos</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Carmen</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">el cafe?</a></li>
+                            </ul>
+                            
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                 <i class="fas fa-box-open me-1"></i>Productos</a>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/SrvProducto?accion=listar">Agregar / Editar</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Categorías </a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Precios</a></li>
+                             </ul>
+                                 
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                 <i class="fas fa-warehouse me-1"></i>Inventario</a>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Control de stock</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Alertas de bajo stock</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Entradas y salidas</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Almacenes</a></li>
+                             </ul>
+                            
+                         <!--<li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                 <i class="fas fa-truck me-1"></i>Pedidos</a>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Visualización y estado</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Editar pedidos</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Facturas / Envíos</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Notificaciones</a></li>
+                             </ul>-->
+                            
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                 <i class="fas fa-chart-line me-1"></i>Informes</a>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Informe de Ventas </a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Informe de Inventario </a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Informe Financiero</a></li>
+                             </ul>
+
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                 <i class="fas fa-cogs me-1"></i>Configuración</a>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Envío</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Pago</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Personalización</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/SrvVendedor?accion=listar">Usuarios y roles</a></li>
+                             </ul>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <a href="SrvLogin?accion=logout" class="btn btn-sm btn-outline-light">Cerrar sesión</a>
+            </div>
+        </nav>
