@@ -49,6 +49,14 @@ public class SrvVendedor extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        HttpSession session = request.getSession();
+        Integer idRol = (Integer) session.getAttribute("id_rol");
+
+        if (idRol == null || idRol != 1) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+        request.getRequestDispatcher("usuarios.jsp").forward(request, response);        
     }
 
     @Override
@@ -56,6 +64,24 @@ public class SrvVendedor extends HttpServlet {
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
         MdlVendedor mv = new MdlVendedor();
+        HttpSession session = request.getSession();
+        Vendedor vendedor = (Vendedor) session.getAttribute("vendedor");
+        
+        if (accion.equals("Ingresar")) {
+            // Verificamos si el vendedor está logueado y su rol es 1 (SuperAdmin)
+            if (vendedor != null && vendedor.getRol() != null && vendedor.getRol().getIdRol() == 1) {
+                // Acceso permitido
+                ArrayList<Vendedor> lista = mv.listar();
+                request.setAttribute("listaVendedores", lista);
+                request.setAttribute("listaRoles", new modelo.dao.DaoRol().listar());
+                request.getRequestDispatcher("vendedor.jsp").forward(request, response);
+            } else {
+                // Acceso denegado
+                request.setAttribute("error", "Acceso restringido: Solo el SuperAdmin puede ingresar.");
+                request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            }
+            return;
+        }
 
         if (accion.equals("registrar")) {
             Vendedor v = new Vendedor();
