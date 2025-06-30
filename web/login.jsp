@@ -22,9 +22,11 @@
             <label for="password">Password</label>
              <input type="password" id="password" name="password" required />
 
-            <div class="form-options">
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </div>
+             <div class="form-options">
+                 <a href="#" onclick="alert('Debe comunicarse con el administrador para recuperar su contraseña.'); return false;">
+                     ¿Olvidaste tu contraseña?
+                 </a>
+             </div>
 
             <button type="submit">Log in</button>
         </form>
